@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿@*﻿<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -6,11 +6,36 @@
     <link href="/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-secondary">
-        <a class="navbar-brand text-white">IdentityApp</a>
+    <nav class="navbar navbar-dark bg-secondary align-content-center">
+        <a class="navbar-brand text-white">IdentityApp View Layout</a>
         <div class="text-white"><partial name="_LoginPartial" /></div>
     </nav>
     <partial name="_NavigationPartial" />
     @RenderBody()
+</body>
+</html>*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="/assets/css/docs.css">
+    <link rel="stylesheet" href="/assets/css/highlighter.css">
+    <link rel="stylesheet" href="/assets/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
+    <div class="wrapper">
+        <partial name="_preloader" />
+        <partial name="_LoginPartial" />
+        <partial name="_SidebarPartial" />
+        @RenderBody()
+    </div>
+    <partial name="_FooterPartial" />
 </body>
 </html>

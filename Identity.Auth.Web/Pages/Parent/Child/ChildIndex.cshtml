@@ -1,0 +1,67 @@
+﻿@page 
+@model Identity.Auth.Web.Pages.Identity.Parent.Child.ChildIndexModel
+
+@{
+    ViewBag.Workflow = "Child-Profile";
+}
+
+<h1>Index</h1>
+@if (Model.ChildProfile == null || !Model.ChildProfile.Any())
+{
+    <h3>No Kids added yet</h3>
+
+    <p>
+        <a asp-page="ChildCreate">Add kid</a>
+    </p>
+}
+else
+{
+    <p>
+        <a asp-page="./ChildCreate">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChildProfile[0].ChildName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChildProfile[0].Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChildProfile[0].BirthDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChildProfile[0].ParentID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.ChildProfile)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChildName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BirthDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ParentID)
+                    </td>
+                    <td>
+                        <a asp-page="./ChildEdit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./ChildDetails" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./ChildDelete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

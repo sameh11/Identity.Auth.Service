@@ -1,0 +1,72 @@
+@page
+@model Identity.Auth.Web._Pages_Identity_Parent.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    ViewBag.Workflow = "Profile";
+}
+
+<h1>Create</h1>
+
+<h4>ParentProfile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ParentProfile.Name" class="control-label"></label>
+                <input asp-for="ParentProfile.Name" class="form-control" />
+                <span asp-validation-for="ParentProfile.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentProfile.FatherName" class="control-label"></label>
+                <input asp-for="ParentProfile.FatherName" class="form-control" />
+                <span asp-validation-for="ParentProfile.FatherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentProfile.MotherName" class="control-label"></label>
+                <input asp-for="ParentProfile.MotherName" class="form-control" />
+                <span asp-validation-for="ParentProfile.MotherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentProfile.FatherOccupation" class="control-label"></label>
+                <input asp-for="ParentProfile.FatherOccupation" class="form-control" />
+                <span asp-validation-for="ParentProfile.FatherOccupation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentProfile.MotherOccupation" class="control-label"></label>
+                <input asp-for="ParentProfile.MotherOccupation" class="form-control" />
+                <span asp-validation-for="ParentProfile.MotherOccupation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentProfile.Address" class="control-label"></label>
+                <input asp-for="ParentProfile.Address" class="form-control" />
+                <span asp-validation-for="ParentProfile.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentProfile.City" class="control-label"></label>
+                <input asp-for="ParentProfile.City" class="form-control" />
+                <span asp-validation-for="ParentProfile.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentProfile.State" class="control-label"></label>
+                <input asp-for="ParentProfile.State" class="form-control" />
+                <span asp-validation-for="ParentProfile.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentProfile.ZipCode" class="control-label"></label>
+                <input asp-for="ParentProfile.ZipCode" class="form-control" />
+                <span asp-validation-for="ParentProfile.ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+

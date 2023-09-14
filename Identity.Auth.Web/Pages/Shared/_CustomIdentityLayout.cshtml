@@ -12,22 +12,12 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-secondary">
-        <a class="navbar-brand text-white">IdentityApp</a>
+        <a class="navbar-brand text-white">IdentityApp custom identity layout</a>
         <div class="text-white"><partial name="_LoginPartial" /></div>
     </nav>
     <div class="m-2">
         @RenderBody()
         @await RenderSectionAsync("Scripts", required: false)
     </div>
-   @* <script type="text/javascript">
-        var element = document.getElementById("qrCode");
-        if (element !== null) {
-            new QRCode(element, {
-                text: document.getElementById("qrCodeData").getAttribute("data-url"),
-                width: 150, height: 150
-            });
-            element.previousElementSibling?.remove();
-        }
-    </script>*@
 </body>
 </html>

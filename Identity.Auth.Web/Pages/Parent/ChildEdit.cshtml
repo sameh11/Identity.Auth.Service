@@ -1,0 +1,51 @@
+﻿@page
+@model Identity.Auth.Web.Pages.Identity.Parent.Child.ChildEditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    ViewBag.Workflow = "Child-Profile";
+}
+
+<h1>Edit</h1>
+
+<h4>ChildProfile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ChildProfile.Id" />
+            <div class="form-group">
+                <label asp-for="ChildProfile.ChildName" class="control-label"></label>
+                <input asp-for="ChildProfile.ChildName" class="form-control" />
+                <span asp-validation-for="ChildProfile.ChildName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChildProfile.Gender" class="control-label"></label>
+                <input asp-for="ChildProfile.Gender" class="form-control" />
+                <span asp-validation-for="ChildProfile.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChildProfile.BirthDate" class="control-label"></label>
+                <input asp-for="ChildProfile.BirthDate" class="form-control" />
+                <span asp-validation-for="ChildProfile.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChildProfile.ParentID" class="control-label"></label>
+                <input asp-for="ChildProfile.ParentID" class="form-control" />
+                <span asp-validation-for="ChildProfile.ParentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./ChildIndex">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,4 +1,4 @@
-using Identity.Auth.Web.Models;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Identity.Auth.Web.Pages

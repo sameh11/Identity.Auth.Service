@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Identity.Auth.Web.Models
+namespace Domain.Models
 {
     public class Product
     {

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Identity.Auth.Web.Models;
 using Microsoft.AspNetCore.Authorization;
+using Domain.Models;
 
 namespace Identity.Auth.Web.Controllers
 {

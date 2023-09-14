@@ -1,0 +1,38 @@
+@page
+@model Identity.Auth.Web._Pages_Identity_Parent.IndexModel
+
+@{
+    ViewBag.Workflow = "My-Profile";
+    ViewData["Title"] = "Index";
+    //Layout = "./Pages/Identity/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+
+@if (Model.ProfileProps is null)
+{
+    <h3>You dont have profile yet!</h3>
+    <p>
+        <a asp-page="Create">Create My Profile</a>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead><tr><th colspan="2" class="text-center">Personal informaiton</th></tr></thead>
+
+        <tbody>
+            @foreach ((string prop, string val) in Model.ProfileProps)
+            {
+                <tr>
+                    <td>@prop</td>
+                    <td>
+                        @val
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-page="./Edit" asp-route-id="@Model.ParentProfile?.Id">Edit</a>
+}

@@ -1,0 +1,27 @@
+﻿@*@model (string workflow, string theme)*@
+@inject UserManager<IdentityUser> UserManager
+@{
+    Func<string, string> getClass = (string feature) =>
+        feature != null && feature.Equals(Model.workflow) ? "active" : "";
+
+    IdentityUser identityUser
+        = await UserManager.GetUserAsync(User) ?? new IdentityUser();
+    ViewBag.ParentId = identityUser.Id;
+}
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item">
+        <a class="nav-link @getClass("Overview")" asp-page="Manage">
+            Overview
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link @getClass("My-Profile")" asp-page="Index">
+            My Profile
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link @getClass("Child-Profile")" asp-page="/Child/ChildIndex">
+            My Child Profile
+        </a>
+    </li>
+</ul>

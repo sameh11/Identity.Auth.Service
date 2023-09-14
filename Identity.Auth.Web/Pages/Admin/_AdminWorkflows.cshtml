@@ -1,0 +1,64 @@
+﻿@model (string workflow, string theme)
+@{
+    Func<string, string> getClass = (string feature) =>
+    feature != null && feature.Equals(Model.workflow) ? "active" : "";
+}
+<div class="p-1">
+    <a class="btn btn-@Model.theme btn-block @getClass("Dashboard") w-100"
+       asp-page="Dashboard">
+        Dashboard
+    </a>
+</div>
+<div class="p-1">
+    <a class="btn btn-@Model.theme btn-block @getClass("Features") w-100" asp-page="Features">
+        Store Features
+    </a>
+</div>
+
+<div class="p-1">
+    <a class="btn btn-success btn-block @getClass("List") w-100" asp-page="View" asp-route-id="">
+        List Users
+    </a>
+</div>
+
+<div class="p-1">
+    <a class="btn btn-success btn-block @getClass("Create") w-100" asp-page="Create">
+        Create Account
+    </a>
+</div>
+
+<div class="p-1">
+    <a class="btn btn-success btn-block @getClass("Delete") w-100" asp-page="Delete">
+        Delete Account
+    </a>
+</div>
+
+<div class="p-1">
+    <a class="btn btn-success btn-block @getClass("Edit") w-100" asp-page="Edit" asp-route-id="">
+        Edit Users
+    </a>
+</div>
+
+<div class="p-1">
+    <a class="btn btn-success btn-block @getClass("Passwords") w-100" asp-page="Passwords" asp-route-id="">
+        Passwords
+    </a>
+</div>
+
+<div class="p-1">
+    <a class="btn btn-success btn-block @getClass("Lockouts") w-100" asp-page="Lockouts">
+        Lockouts
+    </a>
+</div>
+
+<div class="p-1">
+    <a class="btn btn-success btn-block @getClass("Roles") w-100" asp-page="Roles" asp-route-id="">
+        Edit Roles
+    </a>
+</div>
+
+<div class="p-1">
+    <a class="btn btn-success btn-block @getClass("Claims") w-100" asp-page="Claims" asp-route-id="">
+        Claims
+    </a>
+</div>

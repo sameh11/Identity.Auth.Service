@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace Identity.Auth.Web.Migrations
+namespace Identity.Auth.Web.Migrations.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

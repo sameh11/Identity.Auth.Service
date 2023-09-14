@@ -1,0 +1,44 @@
+﻿@page
+@model Identity.Auth.Web.Pages.Identity.Parent.Child.ChildDetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    ViewBag.Workflow = "Child-Profile";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ChildProfile</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChildProfile.ChildName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChildProfile.ChildName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChildProfile.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChildProfile.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChildProfile.BirthDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChildProfile.BirthDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChildProfile.ParentID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChildProfile.ParentID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./ChildEdit" asp-route-id="@Model.ChildProfile?.Id">Edit</a> |
+    <a asp-page="./ChildIndex">Back to List</a>
+</div>
